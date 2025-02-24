@@ -1,6 +1,6 @@
 name: flutter_baidu_mapapi_base
 description: The flutter_baidu_mapapi_base plugin offer public flutter and native(include Android and iOS) lib for other components.
-version: 3.7.2
+version: 3.9.0
 
 # author: Baidu Map SDK team
 homepage: https://lbsyun.baidu.com/index.php?title=flutter/loc

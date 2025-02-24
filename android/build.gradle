@@ -1,22 +1,25 @@
+plugins {
+    id "com.android.library"
+}
 group 'com.baidu.mapapi.base'
 version '1.0'
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter'}
-        maven { url 'https://maven.aliyun.com/repository/content/groups/public' }
-
-//        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
-    }
-}
+//buildscript {
+//    repositories {
+//        google()
+//        mavenCentral()
+//        maven { url 'https://maven.aliyun.com/repository/google' }
+//        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+//        maven { url 'https://maven.aliyun.com/repository/jcenter'}
+//        maven { url 'https://maven.aliyun.com/repository/content/groups/public' }
+//
+////        jcenter()
+//    }
+//
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:7.3.0'
+//    }
+//}
 
 rootProject.allprojects {
     repositories {
@@ -31,7 +34,7 @@ rootProject.allprojects {
     }
 }
 
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 31
@@ -59,8 +62,8 @@ android {
 }
 
 dependencies {
-//    api fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.baidu.lbsyun:BaiduMapSDK_Map:7.6.1.2'
-    implementation 'com.baidu.lbsyun:BaiduMapSDK_Search:7.6.1.2'
-    implementation 'com.baidu.lbsyun:BaiduMapSDK_Util:7.6.1.2'
+   // api fileTree(include: ['*.jar'], dir: 'libs')/
+    implementation 'com.baidu.lbsyun:BaiduMapSDK_Map:7.6.3'
+    implementation 'com.baidu.lbsyun:BaiduMapSDK_Search:7.6.3'
+    implementation 'com.baidu.lbsyun:BaiduMapSDK_Util:7.6.3'
 }

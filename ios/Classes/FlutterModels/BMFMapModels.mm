@@ -8,6 +8,45 @@
 #import "BMFMapModels.h"
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
 
+@implementation BMFPlanNode
+
++ (instancetype)fromBMKPlanNode:(BMKPlanNode *)node{
+    BMFPlanNode *planNode = [BMFPlanNode new];
+    if (node.cityName) {
+        planNode.cityName = node.cityName;
+    }
+    if (node.name) {
+        planNode.name = node.name;
+    }
+    if (node.cityID) {
+        planNode.cityID = node.cityID;
+    }
+    planNode.pt = [BMFCoordinate fromCLLocationCoordinate2D:node.pt];
+    return planNode;
+}
+
+- (BMKPlanNode *)toBMKPlanNode{
+    BMKPlanNode *node = [BMKPlanNode new];
+    if (self.cityName) {
+        node.cityName = self.cityName;
+    }
+    if (self.name) {
+        node.name = self.name;
+    }
+    if (self.cityID > 0) {
+        node.cityID = self.cityID;
+    }
+    if (self.pt) {
+        node.pt = [self.pt toCLLocationCoordinate2D];
+    }
+    if (self.uid) {
+        node.uid = self.uid;
+    }
+    return node;
+}
+
+@end
+
 @implementation BMFCoordinate
 
 + (instancetype)fromCLLocationCoordinate2D:(CLLocationCoordinate2D)coord {

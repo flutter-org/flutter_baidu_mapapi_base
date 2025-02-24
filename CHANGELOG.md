@@ -1,3 +1,33 @@
+## 3.9.0
+
+新增：
+
+1、iOS新增TextMarker和IconMarker覆盖物绘制；
+
+2、iOS新增setMapCenterToScreenPt接口；
+
+3、iOS新增fitVisibleMapRectWithPadding接口；
+
+4、map插件移除对device_info_plus的依赖；
+
+## 3.8.1
+
+适配：
+
+1、升级适配Flutter SDK（Channel stable, 3.19.6）
+
+## 3.8.0
+
+新增：
+
+1、骑行路线规划增加限行字段
+
+2、Marker新增旋转参数
+
+3、地图调起增加途经点
+
+4、Android端3D建筑物支持设置圆角
+
 ## 3.7.2
 
 修复：

@@ -9,7 +9,33 @@
 #import "NSObject+BMFVerify.h"
 #import "BMFModel.h"
 
+@class BMFCoordinate;
+
 NS_ASSUME_NONNULL_BEGIN
+
+/// 线路检索节点信息,一个路线检索节点可以通过经纬度坐标或城市名加地名确定
+@interface BMFPlanNode : BMFModel
+
+/// 节点所在城市
+@property (nonatomic, copy) NSString *cityName;
+
+/// 节点所在城市ID
+@property (nonatomic, assign) NSInteger cityID;
+
+/// 节点名称
+@property (nonatomic, copy) NSString *name;
+
+/// 节点坐标
+@property (nonatomic, strong) BMFCoordinate *pt;
+
+/// poiid
+@property (nonatomic, copy) NSString *uid;
+
++ (instancetype)fromBMKPlanNode:(BMKPlanNode *)node;
+
+- (BMKPlanNode *)toBMKPlanNode;
+
+@end
 
 /// 经纬度
 @interface BMFCoordinate : BMFModel

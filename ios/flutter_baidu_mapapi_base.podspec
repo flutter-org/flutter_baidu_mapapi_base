@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_baidu_mapapi_base'
-  s.version          = '3.7.2'
+  s.version          = '3.9.0'
   s.summary          = 'A Flutter plugin for BaiduMapAPI_Base.'
   s.description      = <<-DESC
 A Flutter plugin for BaiduMapAPI_Base.
@@ -16,7 +16,7 @@ A Flutter plugin for BaiduMapAPI_Base.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'BaiduMapKit/Utils','6.6.0' # utils强依赖base
+  s.dependency 'BaiduMapKit/Utils','6.6.3' # utils强依赖base
   s.platform = :ios, '8.0'
   s.static_framework = true
 

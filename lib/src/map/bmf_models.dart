@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:typed_data';
+
+import 'package:flutter/material.dart';
 
 /// 此文件定义flutter与native间的基础数据交互中间层model
 
@@ -379,6 +380,14 @@ class BMFClusterInfo implements BMFModel {
 
 /// 地图建筑物信息 since 3.1.0
 class BMFBuildInfo implements BMFModel {
+  /// 建筑物id
+  String? structId;
+
+  /// 楼面标记：
+  /// 1：请求坐标点在楼面内
+  /// 0：请求坐标点在楼面外
+  int? label;
+
   /// 高度
   late double height;
 
@@ -396,7 +405,9 @@ class BMFBuildInfo implements BMFModel {
       {required this.height,
       required this.paths,
       required this.center,
-      this.accuracy});
+      this.accuracy,
+      this.structId,
+      this.label});
 
   /// map => BMFBuildInfo
   BMFBuildInfo.fromMap(Map map)
@@ -410,6 +421,8 @@ class BMFBuildInfo implements BMFModel {
     paths = map['paths'];
     center = BMFCoordinate.fromMap(map['center']);
     accuracy = map['accuracy'];
+    structId = map['structId'];
+    label = map['label'];
   }
 
   @override
@@ -424,6 +437,8 @@ class BMFBuildInfo implements BMFModel {
       'accuracy': this.accuracy,
       'paths': this.paths,
       'center': this.center.toMap(),
+      'structId': this.structId,
+      'label': this.label,
     };
   }
 }

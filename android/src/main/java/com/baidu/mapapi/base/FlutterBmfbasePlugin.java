@@ -22,6 +22,8 @@ public class FlutterBmfbasePlugin implements FlutterPlugin, MethodCallHandler {
   private static final String METHOD_GET_NATIVE_SDK_VERSION = "flutter_bmfbase/sdk/getNativeBaseVersion";
   private static final String METHOD_SET_PRIVACY_API_KEY = "flutter_bmfbase/sdk/setAgreePrivacy";
 
+  private static final String METHOD_GET_ANDROID_VERSION = "flutter_bmfbase/sdk/getAndroidSdkVersion";
+
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     final MethodChannel channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_bmfbase");
@@ -76,6 +78,8 @@ public class FlutterBmfbasePlugin implements FlutterPlugin, MethodCallHandler {
           }
         }
       }
+    } else if (call.method.equals(METHOD_GET_ANDROID_VERSION)) {
+      result.success(android.os.Build.VERSION.SDK_INT);
     }
   }
 
