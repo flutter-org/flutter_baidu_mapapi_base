@@ -356,8 +356,11 @@ class BMFClusterInfo implements BMFModel {
     coordinate = BMFCoordinate.fromMap(map['coordinate']);
     if (map['iconData'] != null) {
       Map iconDataMap = map['iconData'];
-      List<dynamic> iconDataList = iconDataMap['data'];
-      iconData = Uint8List.fromList(iconDataList.map((i) => i as int).toList());
+      if (iconDataMap['data'] != null && iconDataMap['data'] is List) {
+        List<dynamic> iconDataList = iconDataMap['data'];
+        iconData =
+            Uint8List.fromList(iconDataList.map((i) => i as int).toList());
+      }
     }
     size = map['size'] as int?;
   }

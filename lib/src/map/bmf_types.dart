@@ -143,6 +143,9 @@ enum BMFLayerType {
   /// 新版SDK覆盖物默认图层
   NewSDKDefaultOverlay,
 
+  /// 蜂窝热力图图层(Android独有)
+  SDKHEXAGONMAP,
+
   /// 定位图层（Android独有）
   SDKLocationOverlay,
 }

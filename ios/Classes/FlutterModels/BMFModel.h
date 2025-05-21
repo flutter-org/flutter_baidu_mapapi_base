@@ -10,6 +10,12 @@
 #import "BMFDicModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
+/// 语言类型枚举
+typedef enum {
+    BMFLanguageTypeChinese = 0,   // 中文
+    BMFLanguageTypeEnglish       // 英文
+} BMFLanguageType;
+
 @interface BMFModel : NSObject<BMFDicModel>
 
 @end
